@@ -1,37 +1,46 @@
+$light: #ff9c3d ;
+$dark:#eb5d13;
+$white:#FFF;
+$black:#000;
+$font-muli:"Muli", sans-serif;
+$shadow:rgba(255, 255, 255, 0.1);;
 body {
   margin: 0;
-  background-color: #ff9c3d;
-  font-family: "Muli", sans-serif;
+  background-color: $light;
+  font-family: $font-muli;
   box-sizing: border-box;
+}
+.flex__center{
+  display: flex;
+  justify-content: center;
+  
 }
 
 .header {
-  background-color: #eb5d13;
+  background-color: $dark;
   width: 100%;
   height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
-.header__logo--img {
-  width: 60px;
-  height: auto;
-  margin: 10px;
-}
 .header__logo {
   display: flex;
+  .header__logo--img {
+    width: 60px;
+    height: auto;
+    margin: 10px;
+  }
 }
 .login {
-  background-color: #eb5d13;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-color: $dark;
+  @extend .flex__center;  
   padding: 0px 3px;
   min-height: calc(100vh - 130px);
 }
 .login__container {
-  background-color: rgba(255, 255, 255, 0.1);
+  
+  background-color: $shadow;
   border: 2px solid black;
   border-radius: 30px;
   padding: 60px 68px 40px;
@@ -42,7 +51,7 @@ body {
   flex-direction: column;
 }
 .login__container--form {
-  display: flex;
+  @extend .flex__center;  
   flex-direction: column;
 }
 .login__container--form label {
@@ -52,12 +61,13 @@ body {
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
+  a {
+    font-size: 14;
+    text-decoration: none;
+    color: black;
+  }
 }
-.login__container--remember-me a {
-  font-size: 14;
-  text-decoration: none;
-  color: black;
-}
+
 .login__container--remember-me a:hover {
   text-decoration: underline;
 }
@@ -66,8 +76,7 @@ body {
   margin-right: 10px;
 }
 .login__conatiner--socialM div {
-  display: flex;
-  align-items: center;
+  @extend .flex__center;  
   font-size: 14px;
   margin-top: 10px;
 }
@@ -88,7 +97,7 @@ body {
   border-left: 0px;
   border-right: 0px;
   border-top: 0px;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid $black;
   font-family: "Muli", sans-serif;
   margin-bottom: 10px;
   padding: 0px 10px;
@@ -96,17 +105,17 @@ body {
   height: 45px;
 }
 ::placeholder {
-  color: black;
-  font-family: "Muli", sans-serif;
+  color: $black;
+  font-family: $font-muli;
 }
 .buttom {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: $shadow;
   border: 0px;
   border-radius: 25px;
   cursor: pointer;
   font-size: 16px;
   font-weight: bold;
-  font-family: "Muli", sans-serif;
+  font-family: $font-muli;
   height: 45px;
   letter-spacing: 1px;
   margin: 10px 0px;
@@ -115,20 +124,22 @@ body {
 .footer {
   width: 100%;
   height: 50px;
-  background: linear-gradient(#eb5d13, #8f3100);
-  display: flex;
-  align-items: center;
+  background: linear-gradient($dark, #8f3100);
+  @extend .flex__center; 
+  a {
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0px 10px;
+    
+  }
+  a:hover {
+    text-decoration: underline;
+  }
 }
-.footer a {
-  color: black;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0px 10px;
-}
-.footer a:hover {
-  text-decoration: underline;
-}
+
+
 @media only screen and (max-width: 600px){
 .login__container{
 background-color: transparent;
